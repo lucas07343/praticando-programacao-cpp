@@ -15,11 +15,17 @@ int main()
     totalRatos = 0;
     totalSapos = 0;
     for (i = 0; i < n; i++) {
-        cout << "Quantidade de cobaias: ";
-        cin >> quantidadeCobaias;
-        cout << "Tipo de cobaia: ";
-        cin >> tipoCobaia;
-        tipoCobaia = toupper(tipoCobaia);
+        do {
+            cout << "Quantidade de cobaias: ";
+            cin >> quantidadeCobaias;
+            cout << "Tipo de cobaia: ";
+            cin >> tipoCobaia;
+            tipoCobaia = toupper(tipoCobaia);
+
+            if (tipoCobaia != 'C' && tipoCobaia != 'R' && tipoCobaia != 'S') {
+                cout << "TIPO DA COBAIA NAO CORRESPONDE!\nfavor digitar o caso de teste novamente" << endl;
+            }
+        } while (tipoCobaia != 'C' && tipoCobaia != 'R' && tipoCobaia != 'S');
 
         switch (tipoCobaia) {
             case 'C' :
